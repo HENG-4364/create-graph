@@ -1,6 +1,13 @@
 import { knx } from 'src/connection/CreateKnexConnectios';
 
 export const GetProductDetail = async (_, { id }: { id: number }, {}) => {
-  const getProductDerail = await knx('products').where({ id }).first();
-  return getProductDerail;
+  const getProductDetail = await knx('products').where({ id }).first();
+  const getProductCategory = await knx('product_categories')
+    .where({ id: getProductDetail.category_id })
+    .first();
+
+  return {
+    ...getProductDetail,
+    category: getProductCategory,
+  };
 };

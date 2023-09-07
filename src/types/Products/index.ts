@@ -5,5 +5,6 @@ export type ProductInput = {
   description: string;
   summary: string;
   price: number;
+  status: string;
   category_id: number;
 };

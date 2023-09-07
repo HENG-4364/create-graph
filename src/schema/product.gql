@@ -4,8 +4,8 @@ type Query {
 }
 type Mutation {
   createProduct(input: ProductInput): Boolean
-  updateProduct(id:Int!,input:ProductInput):Boolean
-  removeProduct(id:Int!):Boolean
+  updateProduct(id: Int!, input: ProductInput): Boolean
+  removeProduct(id: Int!): Boolean
 }
 type Product {
   id: Int
@@ -14,7 +14,8 @@ type Product {
   description: String
   summary: String
   price: Float
-  category_id: Int
+  status:String
+  category: Category
 }
 input ProductInput {
   product_name: String
@@ -22,5 +23,6 @@ input ProductInput {
   description: String
   summary: String
   price: Float
+  status:String
   category_id: Int
 }

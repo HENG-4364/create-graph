@@ -1,0 +1,15 @@
+type Query {
+  categories: [Category]
+  category(id: Int!): Category
+}
+type Mutation {
+  createProductCategory(input: InputProductCategory): Boolean
+}
+type Category {
+  id: Int
+  category_name: String
+  products:[Product]
+}
+input InputProductCategory {
+  category_name: String
+}
