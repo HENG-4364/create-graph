@@ -23,7 +23,7 @@ async function CreateApolloserver() {
     expressMiddleware(server, {})
   );
   app.listen({ port: 8080 }, () => {
-    console.log(`🚀 server is running on port 8080`);
+    console.log(`🚀 server is running on port http://localhost:${8080}/graph`);
   });
 }
 CreateApolloserver();

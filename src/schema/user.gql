@@ -2,12 +2,13 @@ type Query {
   users: [User]
   user(id: Int!): User
 }
+
 type User {
   id: Int
-  fullname:String
+  fullName:String
   gender:String
   email:String
-  username:String
+  userName:String
   password:String
   
 }
